@@ -7,5 +7,5 @@ import (
 
 func main() {
 	fmt.Println("Hello, World!")
-	basics.RunComments()
+	basics.RunOperaters()
 }
