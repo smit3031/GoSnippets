@@ -7,5 +7,6 @@ import (
 
 func main() {
 	fmt.Println("Hello, World!")
-	basics.RunFunctions()
+	// basics.RunMethods()
+	basics.RunStructures()
 }

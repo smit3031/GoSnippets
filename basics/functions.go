@@ -123,6 +123,65 @@ func RunFunctions() {
 	_, a, str := returnMultiVals()
 	fmt.Println("Second value (int):", a)
 	fmt.Println("Third value (string):", str)
+
+	// Defer keyword
+	/*
+					In Go language, defer statements delay the execution of
+					the function or method or an anonymous method until the
+					nearby functions returns.
+					In other words, defer function
+					or method call arguments evaluate instantly, but they don’t
+					execute until the nearby functions returns.
+
+		Syntax:
+
+			// Function
+			defer func func_name(parameter_list Type)return_type{
+			// Code
+			}
+
+			// Method
+			defer func (receiver Type) method_name(parameter_list){
+			// Code
+			}
+
+			defer func (parameter_list)(return_type){
+			// code
+			}()
+
+			In Go language, multiple defer statements are allowed in
+			the same program and they are executed in LIFO(Last-In, First-Out) order.
+
+			Defer statements are generally used to ensure that the files are closed
+			when their need is over, or to close the channel, or to catch the panics in the program.
+	*/
+
+	defer deferFuncExample(2, 4)
+	show()
+
+	fmt.Println("Start")
+
+	// Multiple defer statements -> Executes in LIFO order
+	defer fmt.Println("End")
+	defer deferThisFunc(3, 5)
+	defer deferFuncExample(1, 2)
+	defer deferThisFunc(10, 10)
+
+}
+
+func deferThisFunc(a, b int) string {
+	fmt.Println(a + b)
+	return "Executed"
+}
+
+func deferFuncExample(a, b int) int {
+	res := a + b
+	fmt.Println(res)
+	return res
+}
+
+func show() {
+	fmt.Println("Defering deferFuncExample till I'm executed!")
 }
 
 func init() {
@@ -130,7 +189,7 @@ func init() {
 }
 
 func init() {
-	fmt.Println("Hello! init() function")
+	fmt.Println("Hello! init() function before main!!!")
 }
 
 func area(length, width int) int {
