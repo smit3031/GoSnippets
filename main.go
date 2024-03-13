@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
-	"gosnippets/basics"
+	// "gosnippets/basics"
+	"gosnippets/arrays"
 )
 
 func main() {
-	fmt.Println("Hello, World!")
+	fmt.Println("Hello, Main Here!")
 	// basics.RunMethods()
-	basics.RunStructures()
+	// basics.RunEx()
+	arrays.RunArraysStuff()
 }

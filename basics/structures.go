@@ -116,6 +116,7 @@ func RunStructures() {
 	fmt.Println("Enrollment number : ", value.int)
 	fmt.Println("Student name : ", value.string)
 	fmt.Println("Package price : ", value.float64)
+
 }
 
 type student struct {
