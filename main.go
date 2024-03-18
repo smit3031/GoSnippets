@@ -10,5 +10,5 @@ func main() {
 	fmt.Println("Hello, Main Here!")
 	// basics.RunMethods()
 	// basics.RunEx()
-	arrays.RunArraysStuff()
+	arrays.RunSlices()
 }
